@@ -8,5 +8,6 @@ Spree::Admin::NavigationHelper.module_eval do
     tab_without_legacy_return_authorizations(*args)
   end
 
-  alias_method_chain :tab, :legacy_return_authorizations
+  alias_method :tab_without_legacy_return_authorizations, :tab
+  alias_method :tab, :tab_with_legacy_return_authorizations
 end
